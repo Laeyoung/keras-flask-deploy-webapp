@@ -102,6 +102,9 @@ function previewFile(file) {
 //========================================================================
 
 function predictImage(image) {
+  console.log('----------')
+  console.log(JSON.stringify(image))
+  
   fetch("/predict", {
     method: "POST",
     headers: {

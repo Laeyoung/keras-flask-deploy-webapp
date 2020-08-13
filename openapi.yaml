@@ -3,17 +3,11 @@ openapi: 3.0.1
 info:
   title: ainized-keras-flask-deploy-webapp
   description:  |
-    ## A good image-to-image translation model should learn a mapping between different visual domains
+    ## A simple image classifier app.
     
-    How to use:
-      * Select a Face Type
-      * Select a Face Image
-      * Execute and wait little time
-    
-    [Attribution-NonCommercial 4.0 International](https://github.com/psi1104/stargan-v2/blob/master/LICENSE)
   version: '0.1'
 servers:
-  - url: 'https://ainizetutorial-wook-2.endpoint.ainize.ai/'
+  - url: 'https://master-keras-flask-deploy-webapp-laeyoung.endpoint.staging.ainize.ai/'
 
 paths:
   /predict:

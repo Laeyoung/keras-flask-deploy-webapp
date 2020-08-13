@@ -9,7 +9,8 @@ from gevent.pywsgi import WSGIServer
 # TensorFlow and tf.keras
 import tensorflow as tf
 from tensorflow import keras
-
+import PIL
+from PIL import Image
 from tensorflow.keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
@@ -70,7 +71,8 @@ def predict():
         if not request.files.get('base_image'):
             return {'error': 'must have a base image'}, 400
         
-        img = request.files['base_image']
+        file = request.files['base_image']
+        img = PIL.Image.open(file).convert("RGB")
         # Save the image to ./uploads
         # img.save("./uploads/image.png")
 

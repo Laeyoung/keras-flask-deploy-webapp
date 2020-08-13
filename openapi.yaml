@@ -13,7 +13,7 @@ info:
     [Attribution-NonCommercial 4.0 International](https://github.com/psi1104/stargan-v2/blob/master/LICENSE)
   version: '0.1'
 servers:
-  - url: 'https://ainize-staging.herokuapp.com/Laeyoung/keras-flask-deploy-webapp?branch=master'
+  - url: 'https://ainizetutorial-wook-2.endpoint.ainize.ai/'
 
 paths:
   /predict:

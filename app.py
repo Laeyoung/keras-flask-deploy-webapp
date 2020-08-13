@@ -66,8 +66,11 @@ def index():
 def predict():
     if request.method == 'POST':
         # Get the image from post request
-        img = base64_to_pil(request.json)
-
+        # img = base64_to_pil(request.json)
+        if not request.files.get('base_image'):
+            return {'error': 'must have a base image'}, 400
+        
+        img = request.files['base_image']
         # Save the image to ./uploads
         # img.save("./uploads/image.png")
 

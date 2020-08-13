@@ -1,0 +1,60 @@
+
+openapi: 3.0.1
+info:
+  title: ainized-keras-flask-deploy-webapp
+  description:  |
+    ## A good image-to-image translation model should learn a mapping between different visual domains
+    
+    How to use:
+      * Select a Face Type
+      * Select a Face Image
+      * Execute and wait little time
+    
+    [Attribution-NonCommercial 4.0 International](https://github.com/psi1104/stargan-v2/blob/master/LICENSE)
+  version: '0.1'
+servers:
+  - url: 'https://ainizetutorial-wook-2.endpoint.ainize.ai/'
+
+paths:
+  /predict:
+    post:
+      tags:
+      - default
+      requestBody:
+        required: true
+        description: "image-to-image translation model should learn a mapping between different visual domains"
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                base_image:
+                  description: Import Image
+                  type: string
+                  format: binary
+                  
+
+            encoding:
+              files:
+                contentType: image/*
+      responses:
+         '200':
+            description: success
+            content:
+              application/json:
+                  schema:
+                    type: object
+                    properties:
+                      result:
+                        type: string
+                        description: result
+                      probability:
+                        type: number
+                        description: probability
+                    format: binary
+         '400':
+            description: Bad request (Can not load images)
+         '429':
+            description: Toomany requests try again
+         '500':
+            description: Server Side Error
